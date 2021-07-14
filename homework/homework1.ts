@@ -1,5 +1,5 @@
 type Combinable = number | string;
-function Cnt(arr: Combinable[]): any {
+function Cnt(arr: Combinable[]): number {
     let cnt: number = 0;
     for(let elem of arr){
         if (typeof elem == 'string'){
