@@ -20,13 +20,11 @@ class Square {
 	}
 }
 
-class Rectangle {
-	width: number;
+class Rectangle extends Square {
 	height: number;
-	area: number;
 
 	constructor(width, height) {
-		this.width = width;
+		super(width);
 		this.height = height;
 	}
 
@@ -36,8 +34,11 @@ class Rectangle {
 	}
 }
 
-const sqrl = new Square(5);
-const rect = new Rectangle(5, 10);
-let areas: Array<number>;
-areas = [sqrl.calcArea(), rect.calcArea()];
-console.log(areas);
+const S1 = new Square(5);
+const R1 = new Rectangle(5, 10);
+const S2 = new Square(10);
+const R2 = new Rectangle(10, 20);
+let shapes = [S1, R1, S2, R2];
+shapes.forEach(function (shape) {
+	console.log(shape.calcArea());
+});
