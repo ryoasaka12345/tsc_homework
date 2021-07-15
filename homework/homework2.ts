@@ -6,7 +6,13 @@ Create an array contain list of Square and Rectangle.
 Output area of each element in the arrays to console log.
 */
 
-class Square {
+interface Shape {
+	width: number;
+	area: number;
+	calcArea();
+}
+
+class Square implements Shape{
 	width: number;
 	area: number;
 
@@ -20,11 +26,13 @@ class Square {
 	}
 }
 
-class Rectangle extends Square {
+class Rectangle implements Shape {
+	width: number
 	height: number;
+	area: number;
 
 	constructor(width, height) {
-		super(width);
+		this.width = width;
 		this.height = height;
 	}
 
